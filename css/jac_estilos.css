@@ -1,0 +1,71 @@
+.TableroControl{
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.j-centrar{
+    display: flex;
+    alignment-adjust: central;
+}
+.j-body{
+    background-color: #08ec006e;
+}
+
+.j-ul_menu{
+   padding-bottom: 10px;
+}
+
+.j-scroll
+{
+    width:auto;
+    max-height:500px;
+    overflow-x: scroll;
+    margin-top:5px;
+}
+.j-titulo
+{
+    color: #ffffff;
+    background:#3c8dbc;
+    font-weight: bold;
+}
+
+li{
+    cursor:pointer;
+    cursor: hand;
+}
+.j-no-seleccionable {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none; 
+}
+.j-imput-edit {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-right: 0px;
+    padding-left: 0px;
+}
+.color-desabilitado{
+    background: #eeeeee;
+}
+.cursor-mano{
+    cursor:pointer; 
+    cursor: hand;
+}
+.j-border-div {
+    border-top-style: dotted;
+    border-right-style: dotted;
+    border-bottom-style: dotted;
+    border-left-style: dotted;
+    border-color: gray;
+}
+.j-ocultar{
+    visibility: hidden
+}
+
+.thumb{
+    height: 300px;
+    border: 1px solid #000;
+    margin: 10px 5px 0 0;
+}

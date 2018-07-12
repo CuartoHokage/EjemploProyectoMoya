@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>TS MONTE CARLO</title>
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/png" href="../img/icono.ico" />
+        <link rel="stylesheet" href="../css/estilos.css">
+        <link rel="stylesheet" href="../css/style.css"> 
+        <link rel="stylesheet" href="../css/jac_estilos.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+        <link href="../css/index_bootstrap.css" type="text/css" rel="stylesheet">       
+        <link href="../css/index_style.css" type="text/css" rel="stylesheet"> 
+
+        <script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
+        <script type="text/javascript" src="../js/loadingoverlay.js"></script>
+        <script type="text/javascript" src="../js/loadingoverlay_progress.js"></script>
+        <script type="text/javascript" src="../js/lib_loader.js"></script>
+        <script src="../js/fun_metodos.js"></script>
+
+        <script>
+
+            var area = ['Bar', 'C.Este', 'C.Oeste', 'Sintetica', 'Ágora'];
+            var miercoles = [41, 4, 16, 63, 19];
+            var aleatorios = [0.08, 0.07, 0.34, 0.93, 0.45, 0.72, 0.34, 0.84, 0.75, 0.99];
+            var total = 0;
+
+            //Suma miercoles y obtiene el total
+            for (var x = 0; x < miercoles.length; x++) {
+                total += miercoles[x];
+            }
+
+            console.log('Miercoles: ' + miercoles);
+            console.log('Total: ' + total.toFixed(2));
+
+            var probabilidad = [];
+            var acumulada = [];
+            var inicial = 0;
+
+            //Obtengo la probabilidad dividiendo para el total, luego obtengo la acumulada sumando valor anterior con valor actual
+            for (var x = 0; x < miercoles.length; x++) {
+
+                proba = miercoles[x] / total;
+                probabilidad.push(proba.toFixed(2));
+
+                acumula = proba + inicial;
+                acumulada.push(acumula.toFixed(2));
+                inicial = acumula;
+            }
+            console.log('Área: ' + area);
+            console.log('Probabilidad: ' + probabilidad);
+            console.log('Acumulada: ' + acumulada);
+            console.log('Aleatorios: ' + aleatorios);
+
+            // Declaro los limites o los rangos
+            var limite1 = acumulada[0];
+            var limite2 = acumulada[1];
+            var limite3 = acumulada[2];
+            var limite4 = acumulada[3];
+            var limite5 = acumulada[4];
+            var limite6 = acumulada[5];
+
+            var cuentaFrecuencia0 = 0;
+            var cuentaFrecuencia1 = 0;
+            var cuentaFrecuencia2 = 0;
+            var cuentaFrecuencia3 = 0;
+            var cuentaFrecuencia4 = 0;
+            //Recorro el array Aleatorios ya que cada numero tengo que comparar con el limite dependiendo de ello obtendre en area y el numero de estudiantes
+            for (var x = 0; x < aleatorios.length; x++) {
+                valor = aleatorios[x];
+
+                var semana = x + 1;
+                if (valor <= limite1) {
+                    console.log('semana ' + semana + ' valor: ' + valor + ' N: ' + miercoles[0] + ' area: ' + area[0])
+
+                    cuentaFrecuencia0 += 1;
+
+                } else
+                if (valor <= limite2) {
+                    console.log('semana ' + semana + ' valor: ' + valor + ' M: ' + miercoles[1] + ' area: ' + area[1])
+                    cuentaFrecuencia1 += 1;
+                } else
+                if (valor <= limite3) {
+                    console.log('semana ' + semana + ' valor: ' + valor + ' M: ' + miercoles[2] + ' area: ' + area[2])
+                    cuentaFrecuencia2 += 1;
+                } else
+                if (valor <= limite4) {
+                    console.log('semana ' + semana + ' valor: ' + valor + ' M: ' + miercoles[3] + ' area: ' + area[3])
+                    cuentaFrecuencia3 += 1;
+                } else
+                if (valor <= limite5) {
+                    console.log('semana ' + semana + ' valor: ' + valor + ' M: ' + miercoles[4] + ' area: ' + area[4])
+                    cuentaFrecuencia4 += 1;
+                } else {
+                    console.log('no existe rango')
+                }
+            }
+            console.log('f0: ' + cuentaFrecuencia0 + ' f1: ' + cuentaFrecuencia1 + '' + ' f2: ' + cuentaFrecuencia2);
+
+            console.log(' f3: ' + cuentaFrecuencia3 + ' f4: ' + cuentaFrecuencia4);
+
+            //****************************************************************
+
+        </script>   
+
+
+
+    </head>
+    <body class="j-body" onselectstart="return false">
+
+        <div class="titulos_dos">
+            <div> <p>FACULTAD DE INFORMÁTICA - ULEAM</p><p>TÉCNICAS Y SIMULACIÓN</p></div>
+            <img src="../img/facci.png" class="fac" alt="">
+        </div>
+
+        <div class="principal">
+            <aside class="aside_izquierdo">
+                <div class="cd-accordion-menu animated">
+                    <li class="has-children">
+                        <input type="checkbox" name ="group-2" id="group-2">
+                        <label for="group-2">MENU</label>
+                        <ul>
+                            <a href="../index.html"><i class="fa fa-home"></i>Inicio</a>
+                            <li class="has-children">
+                                <input type="checkbox" name ="group-3" id="group-3">
+                                <label for="group-3">Métodos</label>
+                                <ul class="j-ul_menu">
+                                    <a href="modelo_numero_aleatorio.html"><i class="fa fa-cube"></i>Número Aleatorio</a>
+                                    <a href="modelo_monte_carlo.html"><i class="fa fa-cube"></i>Monte Carlo</a>
+                                    <a href="modelo_linea_espera.html"><i class="fa fa-cube"></i>Linea de Espera</a>
+                                    <a href="modelo_inventario.html"><i class="fa fa-cube"></i>Inventario</a>
+                                </ul>
+                            </li>
+
+                        </ul>
+
+
+                    </li>
+
+                </div>            
+                <div class="TableroControl">
+                    <p class="tipo_met">Monte Carlo</p>
+
+                    <div class="cont_text">
+                        <label>Tema: </label>
+                        <p><input type="text" name="" autofocus="" value="Producto" id="tema"></p>
+                    </div>
+
+                    <div class="cont_text">
+                        <label>Áreas: </label><br><span>Ejemplo:      bar1,bar2,bar3,bar4 </span>
+                        <p><input type="text" name="" autofocus="" value="bar1,bar2,bar3,bar4" id="areas"></p>
+                    </div>
+
+                    <div class="cont_text">
+                        <label>Designele sus valores</label><br><span>Ejemplo:  1,5,8,4</span>
+                        <p><input type="text" name="" value="1,5,8,4" id="estudiantes"></p>
+                    </div>
+
+                    <div class="cont_text">
+                        <label>Semanas</label><br><span>#</span>
+                        <p><input type="text" name="" value="10" id="semanas"></p>
+                    </div>
+
+                    <div class="botones_t">
+
+
+                        <a class="btn_principal estyle" onclick="OtraTabla();"><i class="fa fa-plus"></i>  Add Simulación</a>
+                        <a class="btn_principal estyle" onclick="javascript:window.location.reload();"><i class="fa fa-eraser"></i>Nuevo</a>
+
+
+                        <br>
+
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+
+                </div>
+            </aside>
+            <div id="SimulacionesMultiples" class="tab_">
+
+
+
+            </div>
+
+        </div>
+
+        <div class="copy-right">
+
+            <p>© 2018 Tecnica de Simulacion. FACCI | ULEAM <a href="#">8mo "A"</a></p>
+
+        </div>
+
+        <script src="../js/lib_highcharts.js"></script>
+        <script src="../js/lib_exporting.js"></script>
+
+        <script type="text/javascript">
+                            var contador = 0;
+                            function OtraTabla() {
+                                contador = contador + 1;
+                                MonteCarloNuevaSimulacion(contador);
+
+                            }
+        </script>
+
+        <script src="../js/fun_main.js"></script>
+    </body>
+</html>

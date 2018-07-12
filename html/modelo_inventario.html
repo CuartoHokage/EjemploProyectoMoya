@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>TS INVENTARIO</title>
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/png" href="../img/icono.ico" />
+        <link rel="stylesheet" href="../css/estilos.css">
+        <link rel="stylesheet" href="../css/jac_estilos.css">
+        <link rel="stylesheet" href="../css/style.css"> 
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+        <link href="../css/index_bootstrap.css" type="text/css" rel="stylesheet">       
+        <link href="../css/index_style.css" type="text/css" rel="stylesheet"> 
+
+        <script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
+        <script type="text/javascript" src="../js/loadingoverlay.js"></script>
+        <script type="text/javascript" src="../js/loadingoverlay_progress.js"></script>        
+        <script type="text/javascript" src="../js/lib_loader.js"></script>
+        <script src="../js/fun_metodos.js"></script>
+
+    </head>
+    <body class="j-body" onselectstart="return false">
+
+        <div class="titulos_dos">
+            <img  src="../img/facci.png" class="posicionar_izquierda" alt="">
+            <div> <p>FACULTAD DE INFORMÁTICA - ULEAM</p><p>TÉCNICAS Y SIMULACIÓN</p></div>
+            <img src="../img/uleam.png" class="posicionar_derecha"  alt="">
+        </div>
+        <button onclick="Mostrar_Ocultar_Menu();" >OCULTARA</button>
+
+        <div class="principal">
+            
+            <aside class="aside_izquierdo">
+                <div class="cd-accordion-menu animated">
+                    <li class="has-children">
+                        <input type="checkbox" name ="group-2" id="group-2">
+                        <label for="group-2">MENU</label>
+                        <ul>
+                            <a href="../index.html"><i class="fa fa-home"></i>Inicio</a>
+                            <li class="has-children">
+                                <input type="checkbox" name ="group-3" id="group-3">
+                                <label for="group-3">Métodos</label>
+                                <ul class="j-ul_menu">
+                                    <a href="modelo_numero_aleatorio.html"><i class="fa fa-cube"></i>Número Aleatorio</a>
+                                    <a href="modelo_monte_carlo.html"><i class="fa fa-cube"></i>Monte Carlo</a>
+                                    <a href="modelo_linea_espera.html"><i class="fa fa-cube"></i>Linea de Espera</a>
+                                    <a href="modelo_inventario.html"><i class="fa fa-cube"></i>Inventario</a>
+                                </ul>
+                            </li>
+
+                        </ul>
+
+
+                    </li>
+
+                </div>            
+                <div class="TableroControl">
+
+                    <p class="tipo_met">Inventario - Datos</p>  
+                    <div class="cont_text">
+                        <label>Demanda Cuadro: </label>
+                        <p><input type="text" name="" autofocus="" value="400,475,500" id="cuadro_demanda"></p>
+                    </div>
+
+                    <div class="cont_text">
+                        <label>Tiempo Cuadro: </label>
+                        <p><input type="text" name="" value="1,2,3" id="cuadro_tiempo"></p>
+                    </div>
+
+                    <div class="cont_text">
+                        <label>Inventario inicial: </label>
+                        <p><input type="text" name="" value="1400" id="i_inicial"></p>
+                    </div>
+
+
+                    <div class="cont_text">
+                        <label>Q óptimo:</label>
+                        <p><input type="number" name="" value="1400" id="q_pedido"></p>
+                    </div>
+
+                    <div class="cont_text">
+                        <label>(Co) Costo ordenar: </label>
+                        <p><input type="number" name="" value="0" id="costo_ordenar"></p>
+                    </div>
+
+                    <div class="cont_text">
+                        <label>(Ch) Costo mantenimiento: </label>
+                        <p><input type="number" name="" value="0" id="costo_mantener"></p>
+                    </div>
+
+                    <div class="cont_text">
+                        <label>Reorden: </label>
+                        <p><input type="number" name="" value="500" id="reorden"></p>
+                    </div>
+
+                    <div class="cont_text">
+                        <label>Costo x faltante: </label>
+                        <p><input type="number" name="" value="20" id="costo_faltante"></p>
+                    </div>
+
+                    <div class="cont_text">
+                        <label>Eventos: </label>
+                        <p><input type="number" name="" value="15" id="eventos"></p>
+                    </div>
+
+
+                    <div class="botones_t">
+
+                        <a class="btn_principal estyle" onclick="MetodoInventarioAleatorio();"><i class="fa fa-play"></i>  Comenzar</a>
+                        <a class="btn_principal estyle" onclick="javascript:window.location.reload();"><i class="fa fa-eraser"></i>Nuevo</a>
+
+                    </div>
+                </div>
+
+            </aside>
+            <div class="tab_">
+
+                <div id="scatterchart_material"></div>
+
+
+
+                <div id="datos">
+                    <div id="tablas_demanda"></div>
+                    <div id="tablas_tiempo"></div>
+                    <div id="tablas"></div>
+                </div>
+
+                <div id="tabla_inventario"></div>
+
+                <div id="demanda"></div>
+
+
+            </div>
+        </div>
+
+        <div class="copy-right">
+
+            <p>© 2018 Tecnica de Simulacion. FACCI | ULEAM <a href="#">8mo "A"</a></p>
+
+        </div>
+
+        <script src="../js/fun_main.js"></script>
+    </body>
+</html>

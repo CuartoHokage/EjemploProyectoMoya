@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>TS NUMERO ALEATORIO</title>
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/png" href="../img/icono.ico" />
+        <link rel="stylesheet" href="../css/estilos.css">
+        <link rel="stylesheet" href="../css/style.css"> 
+        <link rel="stylesheet" href="../css/jac_estilos.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+        <link href="../css/index_bootstrap.css" type="text/css" rel="stylesheet">       
+        <link href="../css/index_style.css" type="text/css" rel="stylesheet"> 
+
+
+
+
+        <script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
+        <script type="text/javascript" src="../js/loadingoverlay.js"></script>
+        <script type="text/javascript" src="../js/loadingoverlay_progress.js"></script>
+        <script type="text/javascript" src="../js/lib_loader.js"></script>
+        <script type="text/javascript"  src="../js/fun_metodos.js"></script>
+
+    </head>
+    <body class="j-body" onselectstart="return false">
+        <div class="titulos_dos">
+            <div> <p>FACULTAD DE INFORMÁTICA - ULEAM</p><p>TÉCNICAS Y SIMULACIÓN</p></div>
+            <img src="../img/facci.png" class="fac" alt="">
+        </div>
+
+        <div class="principal">
+            <aside class="aside_izquierdo">
+                <div class="cd-accordion-menu animated">
+                    <li class="has-children">
+                        <input type="checkbox" name ="group-2" id="group-2">
+                        <label for="group-2">MENU</label>
+                        <ul>
+                            <a href="../index.html"><i class="fa fa-home"></i>Inicio</a>
+                            <li class="has-children">
+                                <input type="checkbox" name ="group-3" id="group-3">
+                                <label for="group-3">Métodos</label>
+                                <ul class="j-ul_menu">
+                                    <a href="modelo_numero_aleatorio.html"><i class="fa fa-cube"></i>Número Aleatorio</a>
+                                    <a href="modelo_monte_carlo.html"><i class="fa fa-cube"></i>Monte Carlo</a>
+                                    <a href="modelo_linea_espera.html"><i class="fa fa-cube"></i>Linea de Espera</a>
+                                    <a href="modelo_inventario.html"><i class="fa fa-cube"></i>Inventario</a>
+                                </ul>
+                            </li>
+
+                        </ul>
+
+
+                    </li>
+
+                </div>            
+                <div class="TableroControl">
+                    <p class="tipo_met">Numero Aleatorio </p>
+
+                    <div class="cont_text">
+                        <label>Desde</label>
+                        <p><input type="number" name="" autofocus="" value="" id="desde"></p>
+                    </div>
+
+                    <div class="cont_text">
+                        <label>Hasta</label>
+                        <p><input type="number" name="" value="" id="hasta"></p>
+                    </div>
+
+                    <div class="cont_text">
+                        <label>Cantidad</label>
+                        <p><input type="number" name="" value="" id="limite"></p>
+                    </div>
+
+                    <div class="botones_t">
+
+
+                        <a class="btn_principal estyle" onclick="MetodoNumeroAleatorio()"><i class="fa fa-play"></i>  Comenzar</a>
+                        <a class="btn_principal estyle" onclick="javascript:window.location.reload();"><i class="fa fa-eraser"></i>Nuevo</a>
+
+                    </div>
+                </div>
+            </aside>
+            <div class="tab_">
+
+
+                <div id="tablas"></div>
+
+            </div>
+
+        </div>
+        <div class="copy-right">
+
+            <p>© 2018 Tecnica de Simulacion. FACCI | ULEAM <a href="#">8mo "A"</a></p>
+
+        </div>
+
+        <script type="text/javascript"  src="../js/fun_main.js"></script>
+
+
+    </body>
+</html>
